@@ -2,7 +2,9 @@
 def get_structured_chat_response(chat_history):
         try:
                 #1. Make the API call to the LLM here-
-                
+                response = client.chat.completions
+                .create( model="gpt-3.5-turbo",  #model to use for inference
+                messages=[{"role": "user", "content": chat_history}])
         
                 #2. Responses fetched from the LLM request are parsed below as such
                 structured_turns = []
