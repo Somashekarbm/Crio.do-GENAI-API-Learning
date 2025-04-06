@@ -2,11 +2,9 @@
 def get_structured_chat_response(chat_history):
         try:
                 #1. Make the API call to the LLM here-
-                (Note: The code for setting up an API call is 
-                already shown in activity #2.)
+                
         
-                #2. Responses fetched from the LLM request 
-                     are parsed below as such
+                #2. Responses fetched from the LLM request are parsed below as such
                 structured_turns = []
                 for choice in response.choices:
                     role = choice.message.role
