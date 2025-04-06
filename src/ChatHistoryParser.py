@@ -1,23 +1,24 @@
+
 def get_structured_chat_response(chat_history):
-try:
-        #1. Make the API call to the LLM here-
-        (Note: The code for setting up an API call is 
-        already shown in activity #2.)
-
-        #2. Responses fetched from the LLM request 
-             are parsed below as such
-        structured_turns = []
-        for choice in response.choices:
-            role = choice.message.role
-            content = choice.message.content.strip()
-            structured_turns.append(
-            {"role": role, "message": content})
-        return structured_turns
-
-#3. if an error occurs
- except Exception as e: 
-        return [{"role": "system",
-        "message": f"Error occurred: {str(e)}"}]
+        try:
+                #1. Make the API call to the LLM here-
+                (Note: The code for setting up an API call is 
+                already shown in activity #2.)
+        
+                #2. Responses fetched from the LLM request 
+                     are parsed below as such
+                structured_turns = []
+                for choice in response.choices:
+                    role = choice.message.role
+                    content = choice.message.content.strip()
+                    structured_turns.append(
+                    {"role": role, "message": content})
+                return structured_turns
+        
+        #3. if an error occurs
+         except Exception as e: 
+                return [{"role": "system",
+                "message": f"Error occurred: {str(e)}"}]
 
 #4. Example usage of the same
 chat_history = [
