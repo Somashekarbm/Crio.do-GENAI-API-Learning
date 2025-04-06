@@ -18,18 +18,10 @@ class SmartContentAssistant:
         article = call_openai_safely(
             f"Write a short informative article about {topic}"
         )
-
-        #Basically a helper method to extract all of the 
-        # article‘s intent like title, summary,  sentiment ,etc.
-        # (Note: Refer to the github repo link for understanding 
-        # how it extracts article data using structured json 
-        # response format as seen in activity #4)
-
         # Step 2: Extract structured data from the article
         structured_data = extract_article_data(article)
     
-        # Step 3: Generate an illustrative image based 
-        on article title
+        # Step 3: Generate an illustrative image based on article title
         image_url = self.content_generator.generate_image(
             f"Create an illustrative image for: {structured_data['title']}"
         )
